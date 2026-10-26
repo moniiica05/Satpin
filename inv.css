@@ -157,8 +157,8 @@ nav .links a:hover{color:var(--burgundy)}
 .event:hover{transform:translateY(-4px);box-shadow:0 18px 28px -18px rgba(110,26,44,.22)}
 .event .date{margin:0;font-size:24px;font-weight:500}
 .event .time{margin:0;font-family:var(--sans);font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--green-deep)}
-.event .line{width:40px;height:1px;background:var(--sage-light)}
-.event.pink .line{background:var(--blush-line)}
+.event .line{display:none}
+.event.pink .line{display:none}
 .event .venue{margin:0;font-size:22px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 .addr{margin:0;font-size:18px;line-height:1.5;color:var(--text-soft);white-space:pre-line}
 

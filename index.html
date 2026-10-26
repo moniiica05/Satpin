@@ -116,8 +116,6 @@
         <p class="date" data-field="ceremony.date"></p>
         <p class="time" data-field="ceremony.time"></p>
         <span class="line"></span>
-        <p class="venue" data-field="ceremony.venue"></p>
-        <p class="addr" data-field="ceremony.address"></p>
       </div>
       <div class="event pink reveal">
         <svg width="56" height="40" viewBox="0 0 56 40" fill="none" aria-hidden="true"><path d="M14 4 H26 L24 16 C23 21 17 21 16 16 Z" stroke="#8C2F45" stroke-width="1.5"/><path d="M20 20 V34 M15 34 H25" stroke="#8C2F45" stroke-width="1.5"/><path d="M30 4 H42 L40 16 C39 21 33 21 32 16 Z" stroke="#7D8B6A" stroke-width="1.5"/><path d="M36 20 V34 M31 34 H41" stroke="#7D8B6A" stroke-width="1.5"/></svg>
@@ -139,18 +137,10 @@
     <h2 class="title reveal">Venue &amp; Contact</h2>
     <div class="cards">
       <div class="vcard reveal">
-        <p class="label">Holy Matrimony</p>
         <p class="name" data-field="ceremony.venue"></p>
         <p class="addr" data-field="ceremony.address"></p>
         <a class="phone" id="ceremonyPhone" href="#"></a>
         <a class="btn" id="ceremonyMap" href="#" target="_blank" rel="noopener">Get Directions</a>
-      </div>
-      <div class="vcard rose reveal">
-        <p class="label">Reception</p>
-        <p class="name" data-field="reception.venue"></p>
-        <p class="addr" data-field="reception.address"></p>
-        <a class="phone" id="receptionPhone" href="#"></a>
-        <a class="btn" id="receptionMap" href="#" target="_blank" rel="noopener">Get Directions</a>
       </div>
     </div>
   </div>
@@ -200,18 +190,18 @@ const WEDDING = {
   timeZone: "+05:30",           // India = +05:30
 
   ceremony: {
-    venue:   "KPL Garden",
+    venue:   "KPL Gardens",
     address: "Vijayawada Club Rd, Tadepalle, Andhra Pradesh",
     phone:   "+91 8142414353",
     mapLink: "https://maps.app.goo.gl/Qx7F8LjF2C4PEPLE7"                 // Paste a Google Maps link, or leave "" to search by venue name
   },
 
   reception: {
-    date:    "Saturday, 02 January 2027",                // Leave "" if same day as the wedding, or e.g. "Sunday, 20 December 2026"
-    time:    "12:00 PM onwards",
-    venue:   "S K Socials",
-    address: "Jalda A Block, Rourkela, Odisha",
-    phone:   "+91 8917406338",
+    date:    "Dinner at 6:00 PM onwards",
+    time:    "At the venue",
+    venue:   "",
+    address: "",
+    phone:   "",
     mapLink: ""
   },
 
@@ -265,11 +255,20 @@ document.title = `${WEDDING.groom} & ${WEDDING.bride} | Wedding Invitation`;
 function setupVenue(key) {
   const v = WEDDING[key];
   const phone = document.getElementById(key + "Phone");
-  phone.textContent = v.phone;
-  phone.href = "tel:" + v.phone.replace(/[^\d+]/g, "");
-  if (!v.phone) phone.style.display = "none";
-  document.getElementById(key + "Map").href = v.mapLink ||
-    "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(v.venue + ", " + v.address.replace(/\n/g, ", "));
+  const map = document.getElementById(key + "Map");
+
+  if (!phone && !map) return;
+
+  if (phone) {
+    phone.textContent = v.phone;
+    phone.href = "tel:" + v.phone.replace(/[^\d+]/g, "");
+    if (!v.phone) phone.style.display = "none";
+  }
+
+  if (map) {
+    map.href = v.mapLink ||
+      "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(v.venue + ", " + v.address.replace(/\n/g, ", "));
+  }
 }
 setupVenue("ceremony");
 setupVenue("reception");
@@ -285,6 +284,7 @@ document.getElementById("rsvpBtn").href = WEDDING.rsvpWhatsApp
 const cover = document.getElementById("cover");
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
+const openBtn = document.getElementById("openBtn");
 if (WEDDING.music) {
   music.src = WEDDING.music;
   musicBtn.classList.add("show", "paused");
@@ -297,7 +297,10 @@ function syncMusicButton() {
   musicBtn.title = playing ? "Pause background music" : "Play background music";
 }
 
-document.getElementById("openBtn").addEventListener("click", () => {
+let invitationOpen = false;
+function openInvitation() {
+  if (invitationOpen) return;
+  invitationOpen = true;
   cover.classList.add("hide");
   document.body.classList.remove("locked");
   document.body.classList.add("invitation-open");
@@ -307,6 +310,17 @@ document.getElementById("openBtn").addEventListener("click", () => {
       syncMusicButton();
       console.error("Background music could not start:", error);
     });
+  }
+}
+
+openBtn.addEventListener("click", openInvitation);
+openBtn.addEventListener("pointerdown", openInvitation);
+cover.addEventListener("click", event => {
+  if (event.target === cover) openInvitation();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Enter" || event.key === " ") {
+    if (cover && !cover.classList.contains("hide")) openInvitation();
   }
 });
 musicBtn.addEventListener("click", () => {
