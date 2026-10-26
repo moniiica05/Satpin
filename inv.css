@@ -155,8 +155,9 @@ nav .links a:hover{color:var(--burgundy)}
 .event h3{margin:0;font-family:var(--script);font-weight:400;font-size:44px;color:var(--burgundy)}
 .event{transition:transform .35s ease,box-shadow .35s ease}
 .event:hover{transform:translateY(-4px);box-shadow:0 18px 28px -18px rgba(110,26,44,.22)}
-.event .date{margin:0;font-size:24px;font-weight:500}
+.event .date{margin:0;font-size:24px;font-weight:500;white-space:pre-line}
 .event .time{margin:0;font-family:var(--sans);font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--green-deep)}
+.event.pink .time{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:normal;text-transform:none;color:var(--text)}
 .event .line{display:none}
 .event.pink .line{display:none}
 .event .venue{margin:0;font-size:22px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
