@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6E1A2C">
+<meta name="description" content="You are invited to our wedding">
+<title>Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="inv.css">
+</head>
+<body class="locked">
+
+<!--
+  =====================================================================
+   HOW TO EDIT THIS INVITATION
+   You don't need to edit the HTML below.
+   Scroll to the bottom of this file and change the values inside
+   "WEDDING DETAILS" (names, date, venues, phone numbers, etc.).
+   Every place on the page updates automatically.
+   Colours are in inv.css, at the top (:root).
+  =====================================================================
+-->
+
+<!-- ================= COVER (Tap to Open) ================= -->
+<div id="cover" role="dialog" aria-label="Wedding invitation cover">
+  <div class="cover-card">
+    <svg class="float" width="150" height="56" viewBox="0 0 150 56" fill="none" aria-hidden="true"><path d="M8 46 C50 44 100 30 142 10" stroke="#7D8B6A" stroke-width="1.3"/><path d="M38 44 C33 34 38 26 48 25 C48 34 44 41 38 44Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M62 40 C66 30 74 26 82 28 C78 37 70 41 62 40Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M86 33 C82 23 87 15 97 14 C97 23 93 30 86 33Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M106 25 C110 16 118 13 126 15 C122 23 114 27 106 25Z" fill="#DCE3D2" stroke="#7D8B6A"/><circle cx="140" cy="9" r="3.2" fill="#8C2F45"/><circle cx="132" cy="6" r="2.4" fill="#B5707E"/><circle cx="20" cy="45" r="2.4" fill="#B5707E"/></svg>
+    <p class="verse">“I have found the one whom my soul loves.”</p>
+    <p class="label">Song of Solomon 3:4</p>
+    <div class="monogram" data-field="monogram"></div>
+    <p class="label" style="color:var(--green-deep)">Two lives · One covenant · In Christ</p>
+    <h1><span data-field="groom"></span> &amp; <span data-field="bride"></span></h1>
+    <button class="btn" id="openBtn">Tap to Open</button>
+  </div>
+</div>
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
+  <a href="#top" class="brand" data-field="monogram"></a>
+  <div class="links">
+    <a href="#invitation-details">Invitation</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Venue</a>
+    <a href="#rsvp">BLESS US</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="top">
+  <div class="wrap narrow reveal">
+    <svg width="220" height="44" viewBox="0 0 220 44" fill="none" aria-hidden="true"><path d="M10 22 H92" stroke="#C9D2BD"/><path d="M128 22 H210" stroke="#C9D2BD"/><path d="M110 8 C102 14 102 30 110 36 C118 30 118 14 110 8Z" fill="#F3E9EB" stroke="#B5707E"/><path d="M96 22 C100 14 106 14 110 22 C106 30 100 30 96 22Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M124 22 C120 14 114 14 110 22 C114 30 120 30 124 22Z" fill="#DCE3D2" stroke="#7D8B6A"/></svg>
+    <p class="label">Welcome to the wedding of</p>
+    <h2 class="hero-name" data-field="groom"></h2>
+    <span class="amp">&amp;</span>
+    <h2 class="hero-name" data-field="bride"></h2>
+    <div class="hero-meta">
+      <span data-field="dayName"></span><span class="bar"></span>
+      <span data-field="shortDate"></span><span class="bar"></span>
+      <span data-field="city"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VERSE ================= -->
+<section class="verse-band">
+  <div class="wrap narrow reveal">
+    <p class="q">“This is the LORD’s doing; it is marvellous in our eyes.”</p>
+    <p class="label">Psalm 118:23</p>
+  </div>
+</section>
+
+<!-- ================= INVITATION DETAILS ================= -->
+<section id="invitation-details">
+  <div class="inv-card reveal">
+    <svg class="corner tl" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M10 110 C14 70 40 30 110 10" stroke="#7D8B6A" stroke-width="1.2"/><path d="M22 74 C14 66 16 54 26 50 C30 60 28 70 22 74Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M40 46 C36 36 42 28 52 28 C52 38 46 44 40 46Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M64 28 C66 18 76 14 84 18 C80 26 72 30 64 28Z" fill="#DCE3D2" stroke="#7D8B6A"/><circle cx="104" cy="12" r="3.4" fill="#8C2F45"/><circle cx="96" cy="8" r="2.4" fill="#B5707E"/><circle cx="12" cy="98" r="2.4" fill="#B5707E"/></svg>
+    <svg class="corner br" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M10 110 C14 70 40 30 110 10" stroke="#7D8B6A" stroke-width="1.2"/><path d="M22 74 C14 66 16 54 26 50 C30 60 28 70 22 74Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M40 46 C36 36 42 28 52 28 C52 38 46 44 40 46Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M64 28 C66 18 76 14 84 18 C80 26 72 30 64 28Z" fill="#DCE3D2" stroke="#7D8B6A"/><circle cx="104" cy="12" r="3.4" fill="#8C2F45"/><circle cx="96" cy="8" r="2.4" fill="#B5707E"/></svg>
+
+    <p class="lead">Rejoicing in His faithfulness, we</p>
+    <h2 class="inv-names"><span data-field="groom"></span><span class="and">&amp;</span><span data-field="bride"></span></h2>
+    <p class="inv-text">Together with our families,<br>invite you to celebrate with us<br>as we begin our forever.</p>
+
+    <svg width="90" height="20" viewBox="0 0 90 20" fill="none" aria-hidden="true"><path d="M4 10 H86" stroke="#C99AA5"/><circle cx="45" cy="10" r="4" fill="#FFFFFF" stroke="#8C2F45"/></svg>
+
+    <p class="scratch-hint" id="scratchHint">Scratch to reveal the date</p>
+    <div class="scratch-row">
+      <div class="scratch"><h3 data-field="scratchDay"></h3><canvas aria-label="Scratch to reveal the day"></canvas></div>
+      <div class="scratch"><h3 data-field="scratchMonth"></h3><canvas aria-label="Scratch to reveal the month"></canvas></div>
+      <div class="scratch"><h3 data-field="scratchYear"></h3><canvas aria-label="Scratch to reveal the year"></canvas></div>
+    </div>
+
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="cd"><b id="cdD">00</b><small>Days</small></div>
+      <div class="cd"><b id="cdH">00</b><small>Hours</small></div>
+      <div class="cd"><b id="cdM">00</b><small>Minutes</small></div>
+      <div class="cd"><b id="cdS">00</b><small>Seconds</small></div>
+    </div>
+    <div class="special" id="special">
+      <h3>Today is our special day!</h3>
+      <p>We can’t wait to celebrate along with you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section id="events">
+  <div class="wrap">
+    <p class="label reveal">The celebration</p>
+    <h2 class="title reveal">Wedding Events</h2>
+    <div class="cards">
+      <div class="event green reveal">
+        <svg width="56" height="40" viewBox="0 0 56 40" fill="none" aria-hidden="true"><circle cx="21" cy="22" r="12" stroke="#8C2F45" stroke-width="1.5"/><circle cx="35" cy="22" r="12" stroke="#7D8B6A" stroke-width="1.5"/><path d="M17 8 L21 3 L25 8" stroke="#8C2F45" stroke-width="1.5"/></svg>
+        <h3>Holy Matrimony</h3>
+        <p class="date" data-field="ceremony.date"></p>
+        <p class="time" data-field="ceremony.time"></p>
+        <span class="line"></span>
+        <p class="venue" data-field="ceremony.venue"></p>
+        <p class="addr" data-field="ceremony.address"></p>
+      </div>
+      <div class="event pink reveal">
+        <svg width="56" height="40" viewBox="0 0 56 40" fill="none" aria-hidden="true"><path d="M14 4 H26 L24 16 C23 21 17 21 16 16 Z" stroke="#8C2F45" stroke-width="1.5"/><path d="M20 20 V34 M15 34 H25" stroke="#8C2F45" stroke-width="1.5"/><path d="M30 4 H42 L40 16 C39 21 33 21 32 16 Z" stroke="#7D8B6A" stroke-width="1.5"/><path d="M36 20 V34 M31 34 H41" stroke="#7D8B6A" stroke-width="1.5"/></svg>
+        <h3>The Reception</h3>
+        <p class="date" data-field="reception.date"></p>
+        <p class="time" data-field="reception.time"></p>
+        <span class="line"></span>
+        <p class="venue" data-field="reception.venue"></p>
+        <p class="addr" data-field="reception.address"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VENUE & CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <p class="label reveal">Finding your way</p>
+    <h2 class="title reveal">Venue &amp; Contact</h2>
+    <div class="cards">
+      <div class="vcard reveal">
+        <p class="label">Holy Matrimony</p>
+        <p class="name" data-field="ceremony.venue"></p>
+        <p class="addr" data-field="ceremony.address"></p>
+        <a class="phone" id="ceremonyPhone" href="#"></a>
+        <a class="btn" id="ceremonyMap" href="#" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+      <div class="vcard rose reveal">
+        <p class="label">Reception</p>
+        <p class="name" data-field="reception.venue"></p>
+        <p class="addr" data-field="reception.address"></p>
+        <a class="phone" id="receptionPhone" href="#"></a>
+        <a class="btn" id="receptionMap" href="#" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RSVP ================= -->
+<section id="rsvp">
+  <div class="wrap narrow reveal">
+    <h2 class="script" style="margin:0;font-size:clamp(48px,6vw,64px)">Share Your Blessings</h2>
+    <p>Your love and blessings mean so much to us. Please share your blessings and write a word of prayer for us as we begin this beautiful new chapter together.</p>
+    <a class="btn" id="rsvpBtn" href="#" target="_blank" rel="noopener">Blessings &amp; Prayers</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap narrow reveal">
+    <svg width="150" height="56" viewBox="0 0 150 56" fill="none" aria-hidden="true"><path d="M8 46 C50 44 100 30 142 10" stroke="#7D8B6A" stroke-width="1.3"/><path d="M38 44 C33 34 38 26 48 25 C48 34 44 41 38 44Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M62 40 C66 30 74 26 82 28 C78 37 70 41 62 40Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M86 33 C82 23 87 15 97 14 C97 23 93 30 86 33Z" fill="#DCE3D2" stroke="#7D8B6A"/><path d="M106 25 C110 16 118 13 126 15 C122 23 114 27 106 25Z" fill="#DCE3D2" stroke="#7D8B6A"/><circle cx="140" cy="9" r="3.2" fill="#8C2F45"/><circle cx="132" cy="6" r="2.4" fill="#B5707E"/></svg>
+    <p class="q">“Therefore what God hath joined together, let not man put asunder.”</p>
+    <p class="label">Mark 10:9</p>
+    <p class="script names"><span data-field="groom"></span> &amp; <span data-field="bride"></span></p>
+    <p class="label" style="color:var(--green-deep)" data-field="shortDate"></p>
+  </div>
+</footer>
+
+<!-- Background music (optional) – plays after "Tap to Open" -->
+<audio id="bgMusic" loop preload="metadata"></audio>
+<button id="musicBtn" aria-label="Play background music" title="Play background music">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+</button>
+
+<script>
+/* =====================================================================
+   ✏️  WEDDING DETAILS — EDIT ONLY THIS PART
+   Keep the quotes " " around every value.
+   Use \n inside an address to start a new line.
+   ===================================================================== */
+const WEDDING = {
+  groom:    "Satwik",            // Groom's first name
+  bride:    "Monica",            // Bride's first name
+  monogram: "S & M",            // Initials shown in the circle and menu
+  city:     "Vijayawada",             // Shown under the names at the top
+
+  // Wedding date & time (YYYY-MM-DDTHH:MM:SS) — used for the countdown,
+  // the scratch circles and all the dates on the page.
+  dateTime: "2026-12-28T15:00:00",
+  timeZone: "+05:30",           // India = +05:30
+
+  ceremony: {
+    venue:   "KPL Garden",
+    address: "Vijayawada Club Rd, Tadepalle, Andhra Pradesh",
+    phone:   "+91 8142414353",
+    mapLink: "https://maps.app.goo.gl/Qx7F8LjF2C4PEPLE7"                 // Paste a Google Maps link, or leave "" to search by venue name
+  },
+
+  reception: {
+    date:    "Saturday, 02 January 2027",                // Leave "" if same day as the wedding, or e.g. "Sunday, 20 December 2026"
+    time:    "12:00 PM onwards",
+    venue:   "S K Socials",
+    address: "Jalda A Block, Rourkela, Odisha",
+    phone:   "+91 8917406338",
+    mapLink: ""
+  },
+
+  rsvpBy:       "26 December 2026",
+  rsvpWhatsApp: "918895868112", // WhatsApp number with country code, no + or spaces. Leave "" to use email.
+  rsvpEmail:    "monica.aind92@gmail.com",
+
+  music: "audio/great-is-thy-faithfulness.mp3" // Relative path; set to "" to disable music
+};
+/* ======================= END OF EDITABLE PART ======================= */
+
+
+/* ---------- Build all the text from WEDDING ---------- */
+const weddingDate = new Date(WEDDING.dateTime + WEDDING.timeZone);
+const local = new Date(WEDDING.dateTime);  // for showing the day/month exactly as typed
+const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const pad = n => String(n).padStart(2, "0");
+
+const day = local.getDate(), month = local.getMonth(), year = local.getFullYear();
+let h = local.getHours(); const ampm = h >= 12 ? "PM" : "AM"; h = h % 12 || 12;
+const fullDate = `${DAYS[local.getDay()]}, ${day} ${MONTHS[month]} ${year}`;
+
+const fields = {
+  groom: WEDDING.groom,
+  bride: WEDDING.bride,
+  monogram: WEDDING.monogram,
+  city: WEDDING.city,
+  dayName: DAYS[local.getDay()],
+  shortDate: `${pad(day)} · ${pad(month + 1)} · ${year}`,
+  scratchDay: pad(day),
+  scratchMonth: MONTHS[month].slice(0, 3).toUpperCase(),
+  scratchYear: year,
+  rsvpBy: WEDDING.rsvpBy,
+  "ceremony.date": fullDate,
+  "ceremony.time": `${h}:${pad(local.getMinutes())} ${ampm}`,
+  "ceremony.venue": WEDDING.ceremony.venue,
+  "ceremony.address": WEDDING.ceremony.address,
+  "reception.date": WEDDING.reception.date || fullDate,
+  "reception.time": WEDDING.reception.time,
+  "reception.venue": WEDDING.reception.venue,
+  "reception.address": WEDDING.reception.address
+};
+document.querySelectorAll("[data-field]").forEach(el => {
+  const v = fields[el.dataset.field];
+  if (v !== undefined) el.textContent = v;
+});
+document.title = `${WEDDING.groom} & ${WEDDING.bride} | Wedding Invitation`;
+
+/* Phone + map links */
+function setupVenue(key) {
+  const v = WEDDING[key];
+  const phone = document.getElementById(key + "Phone");
+  phone.textContent = v.phone;
+  phone.href = "tel:" + v.phone.replace(/[^\d+]/g, "");
+  if (!v.phone) phone.style.display = "none";
+  document.getElementById(key + "Map").href = v.mapLink ||
+    "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(v.venue + ", " + v.address.replace(/\n/g, ", "));
+}
+setupVenue("ceremony");
+setupVenue("reception");
+
+/* RSVP button: WhatsApp if a number is given, otherwise email */
+const rsvpMsg = `Wishing you both a lifetime of love and happiness! My prayers and blessings are with you as you begin this beautiful new chapter together.`;
+document.getElementById("rsvpBtn").href = WEDDING.rsvpWhatsApp
+  ? `https://wa.me/${WEDDING.rsvpWhatsApp}?text=${encodeURIComponent(rsvpMsg)}`
+  : `mailto:${WEDDING.rsvpEmail}?subject=${encodeURIComponent("RSVP - Wedding")}&body=${encodeURIComponent(rsvpMsg)}`;
+
+
+/* ---------- Tap to open + music ---------- */
+const cover = document.getElementById("cover");
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+if (WEDDING.music) {
+  music.src = WEDDING.music;
+  musicBtn.classList.add("show", "paused");
+}
+
+function syncMusicButton() {
+  const playing = !music.paused;
+  musicBtn.classList.toggle("paused", !playing);
+  musicBtn.setAttribute("aria-label", playing ? "Pause background music" : "Play background music");
+  musicBtn.title = playing ? "Pause background music" : "Play background music";
+}
+
+document.getElementById("openBtn").addEventListener("click", () => {
+  cover.classList.add("hide");
+  document.body.classList.remove("locked");
+  document.body.classList.add("invitation-open");
+  spawnPetals(28);
+  if (WEDDING.music) {
+    music.play().then(syncMusicButton).catch(error => {
+      syncMusicButton();
+      console.error("Background music could not start:", error);
+    });
+  }
+});
+musicBtn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play().then(syncMusicButton).catch(error => {
+      syncMusicButton();
+      console.error("Background music could not start:", error);
+    });
+  } else {
+    music.pause();
+    syncMusicButton();
+  }
+});
+
+
+/* ---------- Fade sections in on scroll ---------- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+/* ---------- Gentle floating petals on page load ---------- */
+function spawnPetals(count = 12) {
+  const colors = ["#B5707E", "#E3CDD2", "#DCE3D2", "#8C2F45", "#FFFFFF"];
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement("span");
+    p.className = "petal";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.width = (8 + Math.random() * 10) + "px";
+    p.style.height = (10 + Math.random() * 12) + "px";
+    p.style.background = colors[i % colors.length];
+    p.style.setProperty("--dx", (Math.random() * 220 - 110) + "px");
+    p.style.animationDuration = (5 + Math.random() * 6) + "s";
+    p.style.animationDelay = (Math.random() * 1.4) + "s";
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 12000);
+  }
+}
+setTimeout(() => spawnPetals(18), 600);
+setInterval(() => spawnPetals(10), 7000);
+
+/* ---------- Scratch to reveal the date ---------- */
+let revealed = 0;
+const scratches = document.querySelectorAll(".scratch canvas");
+scratches.forEach(canvas => {
+  const ctx = canvas.getContext("2d");
+  const dpr = window.devicePixelRatio || 1;
+  let drawing = false, finished = false;
+
+  function paint() {
+    const r = canvas.getBoundingClientRect();
+    canvas.width = r.width * dpr; canvas.height = r.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const g = ctx.createLinearGradient(0, 0, r.width, r.height);
+    g.addColorStop(0, "#B5707E"); g.addColorStop(.5, "#8C2F45"); g.addColorStop(1, "#6E1A2C");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, r.width, r.height);
+    ctx.fillStyle = "rgba(255,255,255,.35)";
+    for (let i = 0; i < 26; i++) { ctx.beginPath(); ctx.arc(Math.random() * r.width, Math.random() * r.height, Math.random() * 1.6 + .4, 0, Math.PI * 2); ctx.fill(); }
+    ctx.fillStyle = "#FFFFFF"; ctx.font = "500 11px Jost, sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("SCRATCH", r.width / 2, r.height / 2 + 4);
+  }
+  paint();
+
+  function scratch(e) {
+    if (!drawing || finished) return;
+    const r = canvas.getBoundingClientRect();
+    ctx.globalCompositeOperation = "destination-out";
+    ctx.beginPath(); ctx.arc(e.clientX - r.left, e.clientY - r.top, 16, 0, Math.PI * 2); ctx.fill();
+    check();
+  }
+  function check() {
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let clear = 0;
+    for (let i = 3; i < data.length; i += 32) if (data[i] === 0) clear++;
+    if (clear / (data.length / 32) > 0.5) {
+      finished = true; canvas.classList.add("done"); revealed++;
+      if (revealed === scratches.length) { document.getElementById("scratchHint").style.opacity = 0; petals(); }
+    }
+  }
+  canvas.addEventListener("pointerdown", e => { drawing = true; canvas.setPointerCapture(e.pointerId); scratch(e); });
+  canvas.addEventListener("pointermove", scratch);
+  ["pointerup", "pointercancel", "pointerleave"].forEach(t => canvas.addEventListener(t, () => drawing = false));
+  canvas.tabIndex = 0;  // keyboard: press Enter to reveal
+  canvas.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ctx.clearRect(0, 0, canvas.width, canvas.height); check(); }
+  });
+});
+
+/* Falling petals after all three circles are revealed */
+function petals() {
+  const colors = ["#B5707E", "#E3CDD2", "#DCE3D2", "#8C2F45", "#FFFFFF"];
+  for (let i = 0; i < 40; i++) {
+    const p = document.createElement("span");
+    p.className = "petal";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.background = colors[i % colors.length];
+    p.style.setProperty("--dx", (Math.random() * 160 - 80) + "px");
+    p.style.animationDuration = (3 + Math.random() * 3) + "s";
+    p.style.animationDelay = (Math.random() * 1.2) + "s";
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 7500);
+  }
+}
+
+
+/* ---------- Countdown ---------- */
+function tick() {
+  const diff = weddingDate - new Date();
+  if (diff <= 0) {
+    document.getElementById("countdown").style.display = "none";
+    document.getElementById("special").classList.add("show");
+    return clearInterval(timer);
+  }
+  document.getElementById("cdD").textContent = pad(Math.floor(diff / 864e5));
+  document.getElementById("cdH").textContent = pad(Math.floor(diff / 36e5) % 24);
+  document.getElementById("cdM").textContent = pad(Math.floor(diff / 6e4) % 60);
+  document.getElementById("cdS").textContent = pad(Math.floor(diff / 1e3) % 60);
+}
+const timer = setInterval(tick, 1000);
+tick();
+</script>
+</body>
+</html>
